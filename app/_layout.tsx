@@ -1,12 +1,14 @@
 import '../global.css'
 
 import { QueryClientProvider } from '@tanstack/react-query'
+import { DevPanel } from '@teo-garcia/react-native-shared/components'
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
+import { env } from '~/lib/env'
 import { queryClient } from '~/lib/query-client'
 
 SplashScreen.preventAutoHideAsync()
@@ -37,6 +39,14 @@ export default function RootLayout() {
           <Stack.Screen name='index' />
           <Stack.Screen name='+not-found' />
         </Stack>
+        <DevPanel
+          defaultOpen={env.isDev}
+          items={[
+            { label: 'Environment', value: env.appEnv },
+            { label: 'API Base URL', value: env.apiBaseUrl },
+          ]}
+          title='App Runtime'
+        />
         <StatusBar style='auto' />
       </QueryClientProvider>
     </GestureHandlerRootView>

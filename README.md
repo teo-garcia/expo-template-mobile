@@ -26,6 +26,7 @@ ecosystem
 | **Navigation**   | Expo Router v4 with file-based routing                   |
 | **UI**           | React 19, NativeWind v5 (Tailwind), Lucide React Native  |
 | **Data**         | TanStack Query v5 for server state                       |
+| **Shared**       | `@teo-garcia/react-native-shared` native diagnostics     |
 | **Type Safety**  | TypeScript strict mode                                   |
 | **Testing**      | Jest, jest-expo, Testing Library for React Native        |
 | **Code Quality** | ESLint, Prettier, Husky, lint-staged, commitlint         |
@@ -115,6 +116,14 @@ Press `i` for iOS simulator, `a` for Android emulator, or `w` for web.
 | `@teo-garcia/eslint-config-shared`   | ESLint rules        |
 | `@teo-garcia/prettier-config-shared` | Prettier formatting |
 | `@teo-garcia/tsconfig-shared`        | TypeScript settings |
+
+---
+
+## Shared Packages
+
+| Package                           | Role                                          |
+| --------------------------------- | --------------------------------------------- |
+| `@teo-garcia/react-native-shared` | Native diagnostics and shared runtime helpers |
 
 ---
 
