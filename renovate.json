@@ -1,28 +1,32 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"],
+  "platformAutomerge": true,
   "packageRules": [
     {
       "groupName": "teo-garcia shared configs",
-      "schedule": ["every weekend"],
+      "schedule": ["on the first day of the month"],
       "automerge": false,
       "reviewers": ["teo-garcia"],
       "matchPackageNames": ["/^@teo-garcia//"]
     },
     {
       "groupName": "expo and react-native",
-      "schedule": ["every weekend"],
+      "schedule": ["on the first day of the month"],
       "automerge": false,
-      "matchPackagePatterns": ["expo", "expo-*", "react-native"]
+      "reviewers": ["teo-garcia"],
+      "matchPackagePatterns": ["^expo", "^react-native"]
     },
     {
       "groupName": "all dependencies",
-      "schedule": ["every 2 months"],
-      "automerge": true,
       "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["/.*/", "!/^@teo-garcia//"]
+      "excludePackagePatterns": ["^@teo-garcia/", "^expo", "^react-native"],
+      "schedule": ["on the first day of the month"],
+      "minimumReleaseAge": "3 days",
+      "automerge": true,
+      "automergeType": "pr"
     }
-  ],
-  "dependencyDashboard": true,
-  "labels": ["dependencies"]
+  ]
 }
