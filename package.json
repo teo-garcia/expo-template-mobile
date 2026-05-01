@@ -94,7 +94,7 @@
     "prettier": "^3.7.3",
     "react-test-renderer": "19.2.4",
     "tailwindcss": "^4.1.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.0"
   },
   "prettier": "@teo-garcia/prettier-config-shared",
   "jest": {
