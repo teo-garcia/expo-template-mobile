@@ -1,7 +1,6 @@
 {
   "extends": "@teo-garcia/tsconfig-shared/expo",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
     },
