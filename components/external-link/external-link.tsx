@@ -1,5 +1,4 @@
-// eslint-disable-next-line simple-import-sort/imports
-import { Link, type ExternalPathString } from 'expo-router'
+import { type ExternalPathString, Link } from 'expo-router'
 import { openBrowserAsync } from 'expo-web-browser'
 import { type ComponentProps } from 'react'
 import { Platform } from 'react-native'

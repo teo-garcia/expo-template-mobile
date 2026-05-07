@@ -1,7 +1,6 @@
-// eslint-disable-next-line simple-import-sort/imports
-import { defineConfig } from 'eslint/config'
 import shared from '@teo-garcia/eslint-config-shared'
 import sharedReactNative from '@teo-garcia/eslint-config-shared/react-native'
+import { defineConfig } from 'eslint/config'
 
 export default defineConfig([
   ...shared,
