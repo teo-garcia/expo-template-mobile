@@ -51,6 +51,7 @@
     "lucide-react-native": "^1.0.0",
     "nativewind": "preview",
     "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-native": "0.85.2",
     "react-native-css": "*",
     "react-native-gesture-handler": "~2.31.0",
