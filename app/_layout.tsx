@@ -14,6 +14,8 @@ import {
 } from '~/components/route-state/route-state'
 import { queryClient } from '~/lib/query-client'
 
+const APP_SHORT_NAME = 'RNTE'
+
 void SplashScreen.preventAutoHideAsync()
 
 export function ErrorBoundary({
@@ -69,7 +71,10 @@ export default function RootLayout() {
          *    <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
          */}
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='index' />
+          <Stack.Screen
+            name='index'
+            options={{ title: `Home | ${APP_SHORT_NAME}` }}
+          />
           <Stack.Screen name='+not-found' />
         </Stack>
         <StatusBar style='auto' />
