@@ -4,17 +4,52 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
+import {
+  RouteLoadingState,
+  RouteState,
+  RouteStateButton,
+} from '~/components/route-state/route-state'
 import { queryClient } from '~/lib/query-client'
 
-SplashScreen.preventAutoHideAsync()
+void SplashScreen.preventAutoHideAsync()
+
+export function ErrorBoundary({
+  error,
+  retry,
+}: Readonly<{ error: Error; retry: () => void }>) {
+  return (
+    <GestureHandlerRootView className='flex-1'>
+      <RouteState
+        actions={<RouteStateButton onPress={retry}>Try again</RouteStateButton>}
+        description={error.message || 'The application shell failed to render.'}
+        title='Something went wrong'
+        variant='error'
+      />
+    </GestureHandlerRootView>
+  )
+}
 
 export default function RootLayout() {
+  const [isReady, setIsReady] = useState(false)
+
   useEffect(() => {
-    SplashScreen.hideAsync()
+    async function prepareApplication() {
+      await SplashScreen.hideAsync()
+      setIsReady(true)
+    }
+
+    void prepareApplication()
   }, [])
+
+  if (!isReady)
+    return (
+      <GestureHandlerRootView className='flex-1'>
+        <RouteLoadingState />
+      </GestureHandlerRootView>
+    )
 
   return (
     <GestureHandlerRootView className='flex-1'>

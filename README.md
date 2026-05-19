@@ -96,6 +96,18 @@ Press `i` for iOS simulator, `a` for Android emulator, or `w` for web.
 
 ---
 
+## Route States
+
+Expo Router conventions own route-state wiring:
+
+| File                                 | Purpose                                  |
+| ------------------------------------ | ---------------------------------------- |
+| `app/_layout.tsx`                    | Root loading fallback and error boundary |
+| `app/+not-found.tsx`                 | Unmatched screen UI                      |
+| `components/route-state/route-state` | Shared local native state UI             |
+
+---
+
 ## Shared Governance
 
 | Area               | Tooling                                             |
