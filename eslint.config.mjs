@@ -12,8 +12,7 @@ export default defineConfig([
       'ios/**',
       'dist/**',
       'node_modules/**',
-      // CommonJS configs — Metro, Babel, and Tailwind require CJS syntax;
-      // cannot use ESM here regardless of the unicorn/prefer-module rule.
+      // CommonJS configs required by Metro, Babel, and Tailwind.
       'babel.config.js',
       'metro.config.js',
     ],
