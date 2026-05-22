@@ -15,7 +15,9 @@ web-build/
 .DS_Store
 *.log
 .idea
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 android/
 ios/
 *.tsbuildinfo
