@@ -113,7 +113,16 @@
       "features/**/*.{ts,tsx}",
       "lib/**/*.{ts,tsx}",
       "!**/*.d.ts",
-      "!**/__mocks__/**"
+      "!**/*.{test,spec}.{ts,tsx}",
+      "!**/__mocks__/**",
+      "!**/lib/test/**",
+      "!**/lib/mocks/**"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
     ]
   }
 }
