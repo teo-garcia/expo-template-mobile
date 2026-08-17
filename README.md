@@ -132,12 +132,12 @@ Expo Router conventions own route-state wiring:
 
 ## Related Templates
 
-| Template                    | Description             |
-| --------------------------- | ----------------------- |
-| `react-template-next`       | Next.js SSR template    |
-| `react-template-rr`         | React Router + Vite SPA |
-| `nest-template-monolith`    | NestJS backend          |
-| `fastapi-template-monolith` | FastAPI backend         |
+| Template                          | Description                      |
+| --------------------------------- | -------------------------------- |
+| `next-template-fullstack`         | Next.js full-stack template      |
+| `react-router-template-fullstack` | React Router full-stack template |
+| `nest-template-monolith`          | NestJS backend                   |
+| `fastapi-template-monolith`       | FastAPI backend                  |
 
 ---
 

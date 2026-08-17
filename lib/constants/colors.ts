@@ -1,4 +1,4 @@
-// Palette aligns with the web templates (react-template-next / react-template-rr).
+// Palette aligns with the web templates (next-template-fullstack / react-router-template-fullstack).
 // primary = text/foreground (near-black in light, near-white in dark).
 // tint = interactive accent (tabs, links). Keep it separate from primary.
 export const Colors = {
