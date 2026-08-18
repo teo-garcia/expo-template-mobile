@@ -1,6 +1,6 @@
 <div align="center">
 
-# React Native Template Expo
+# Expo Template Mobile
 
 **Production-ready React Native starter with Expo SDK 55, New Architecture, and
 TypeScript**

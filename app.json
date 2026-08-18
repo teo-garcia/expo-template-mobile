@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-template-expo",
-    "slug": "react-native-template-expo",
+    "name": "expo-template-mobile",
+    "slug": "expo-template-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
