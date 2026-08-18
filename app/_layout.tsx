@@ -12,9 +12,10 @@ import {
   RouteState,
   RouteStateButton,
 } from '~/components/route-state/route-state'
+import { HealthStatus } from '~/features/health/health-status'
 import { queryClient } from '~/lib/query-client'
 
-const APP_SHORT_NAME = 'RNTE'
+const APP_SHORT_NAME = 'RNT'
 
 void SplashScreen.preventAutoHideAsync()
 
@@ -73,10 +74,11 @@ export default function RootLayout() {
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen
             name='index'
-            options={{ title: `Home | ${APP_SHORT_NAME}` }}
+            options={{ title: `${APP_SHORT_NAME} | Home` }}
           />
           <Stack.Screen name='+not-found' />
         </Stack>
+        <HealthStatus />
         <StatusBar style='auto' />
       </QueryClientProvider>
     </GestureHandlerRootView>
