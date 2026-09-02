@@ -108,18 +108,6 @@ Expo Router conventions own route-state wiring:
 
 ---
 
-## Shared Governance
-
-| Area               | Tooling                                             |
-| ------------------ | --------------------------------------------------- |
-| Dependency updates | Renovate                                            |
-| Issue intake       | GitHub issue templates                              |
-| Change review      | Pull request template                               |
-| CI                 | GitHub Actions for lint, typecheck, test, and audit |
-| Security           | Trivy and `pnpm audit`                              |
-
----
-
 ## Shared Configs
 
 | Package                              | Role                |
