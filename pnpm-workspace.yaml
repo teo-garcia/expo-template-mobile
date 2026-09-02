@@ -15,7 +15,7 @@ overrides:
   node-forge: "1.4.0"
   "picomatch@2.3.1": "4.0.4"
   "picomatch@4.0.3": "4.0.4"
-  postcss: "8.5.10"
+  postcss: "8.5.23"
   shell-quote: "1.8.4"
   "xcode>uuid": "14.0.0"
   yaml: "2.8.3"
