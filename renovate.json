@@ -1,38 +1,30 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "dependencyDashboard": true,
-  "labels": ["dependencies"],
-  "platformAutomerge": true,
-  "vulnerabilityAlerts": {
-    "enabled": true,
-    "addLabels": ["security"],
-    "automerge": true,
-    "automergeType": "pr"
-  },
+  "extends": ["github>teo-garcia/templates//renovate/active"],
   "packageRules": [
     {
+      "description": "Review shared configuration releases after their producer checks pass",
       "groupName": "teo-garcia shared configs",
-      "schedule": ["on the first day of the month"],
-      "automerge": false,
-      "reviewers": ["teo-garcia"],
-      "matchPackageNames": ["@teo-garcia/**"]
+      "matchPackageNames": ["@teo-garcia/**"],
+      "dependencyDashboardApproval": true,
+      "reviewers": ["teo-garcia"]
     },
     {
-      "groupName": "expo and react-native",
-      "schedule": ["on the first day of the month"],
-      "automerge": false,
-      "reviewers": ["teo-garcia"],
-      "matchPackageNames": ["/^expo/", "/^react-native/"]
-    },
-    {
-      "groupName": "all dependencies",
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["!@teo-garcia/**", "!/^expo/", "!/^react-native/"],
-      "schedule": ["on the first day of the month"],
-      "minimumReleaseAge": "3 days",
-      "automerge": true,
-      "automergeType": "pr"
+      "description": "Keep Expo SDK-coupled packages together and require compatibility review",
+      "groupName": "Expo SDK compatibility set",
+      "matchPackageNames": [
+        "expo",
+        "/^expo-/",
+        "react",
+        "react-dom",
+        "react-native",
+        "/^react-native-/",
+        "jest-expo",
+        "react-test-renderer",
+        "nativewind"
+      ],
+      "dependencyDashboardApproval": true,
+      "reviewers": ["teo-garcia"]
     }
   ]
 }
