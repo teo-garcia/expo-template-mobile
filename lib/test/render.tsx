@@ -6,7 +6,7 @@ import React from 'react'
 function createTestQueryClient() {
   return new QueryClient({
     defaultOptions: {
-      queries: { retry: false, staleTime: 0 },
+      queries: { gcTime: Infinity, retry: false, staleTime: 0 },
       mutations: { retry: false },
     },
   })

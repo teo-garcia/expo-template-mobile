@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate Expo dependencies
+        run: pnpm deps:check
+
       - name: Lint (ESLint)
         run: pnpm lint:es:check
 
@@ -41,6 +44,13 @@ jobs:
 
       - name: Test
         run: pnpm coverage
+
+      - name: Export web
+        env:
+          EXPO_PUBLIC_API_BASE_URL: https://api.example.invalid
+        run: |
+          pnpm build
+          grep -R -q 'https://api.example.invalid' dist
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v7

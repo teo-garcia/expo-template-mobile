@@ -2,20 +2,21 @@
 
 # ─── Stage 1: deps ───────────────────────────────────────────────────────────
 FROM node:24-alpine AS deps
-RUN corepack enable && corepack prepare pnpm@10.2.0 --activate
+RUN corepack enable && corepack prepare pnpm@11.5.1 --activate
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN CI=true HUSKY=0 pnpm install --frozen-lockfile
 
 # ─── Stage 2: builder ────────────────────────────────────────────────────────
 FROM node:24-alpine AS builder
-RUN corepack enable && corepack prepare pnpm@10.2.0 --activate
+RUN corepack enable && corepack prepare pnpm@11.5.1 --activate
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Export Expo web bundle (static output)
-RUN EXPO_PUBLIC_API_BASE_URL=${EXPO_PUBLIC_API_BASE_URL:-http://localhost:3000} \
-    pnpm build
+# Expo replaces public environment variables while exporting the static bundle.
+ARG EXPO_PUBLIC_API_BASE_URL=http://localhost:3000
+ENV EXPO_PUBLIC_API_BASE_URL=${EXPO_PUBLIC_API_BASE_URL}
+RUN pnpm build
 
 # ─── Stage 3: production ─────────────────────────────────────────────────────
 FROM nginx:stable-alpine AS production

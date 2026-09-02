@@ -7,7 +7,7 @@ TypeScript**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-24+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
-[![pnpm](https://img.shields.io/badge/pnpm-10+-F69220?logo=pnpm&logoColor=white)](https://pnpm.io)
+[![pnpm](https://img.shields.io/badge/pnpm-11+-F69220?logo=pnpm&logoColor=white)](https://pnpm.io)
 [![Expo](https://img.shields.io/badge/Expo-SDK_55-000020?logo=expo&logoColor=white)](https://expo.dev)
 [![React Native](https://img.shields.io/badge/React_Native-0.83-61DAFB?logo=react&logoColor=white)](https://reactnative.dev)
 
@@ -23,7 +23,7 @@ ecosystem
 | Category         | Technologies                                             |
 | ---------------- | -------------------------------------------------------- |
 | **Framework**    | Expo SDK 55, React Native 0.83, New Architecture only    |
-| **Navigation**   | Expo Router v4 with file-based routing                   |
+| **Navigation**   | Expo Router with file-based routing                      |
 | **UI**           | React 19, NativeWind v5 (Tailwind), Lucide React Native  |
 | **Data**         | TanStack Query v5 for server state                       |
 | **Type Safety**  | TypeScript strict mode                                   |
@@ -36,7 +36,7 @@ ecosystem
 ## Requirements
 
 - Node.js 24+
-- pnpm 10+
+- pnpm 11+
 - Expo CLI
 - For iOS: Xcode 16+ (macOS only)
 - For Android: Android Studio + JDK 17+
@@ -60,7 +60,6 @@ Press `i` for iOS simulator, `a` for Android emulator, or `w` for web.
 | Variable                   | Description          | Default                 |
 | -------------------------- | -------------------- | ----------------------- |
 | `EXPO_PUBLIC_API_BASE_URL` | Backend API base URL | `http://localhost:3000` |
-| `EXPO_PUBLIC_LOG_LEVEL`    | Log verbosity        | `info`                  |
 
 ---
 

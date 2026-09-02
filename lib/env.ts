@@ -1,5 +1,3 @@
-import Constants from 'expo-constants'
-
 type AppEnvironment = 'development' | 'production' | 'test'
 
 const getAppEnvironment = (): AppEnvironment => {
@@ -27,8 +25,7 @@ const getRequiredUrl = (name: string, value: unknown): string => {
 const appEnv = getAppEnvironment()
 const apiBaseUrl = getRequiredUrl(
   'EXPO_PUBLIC_API_BASE_URL',
-  Constants.expoConfig?.extra?.['EXPO_PUBLIC_API_BASE_URL'] ??
-    process.env['EXPO_PUBLIC_API_BASE_URL']
+  process.env.EXPO_PUBLIC_API_BASE_URL
 )
 
 export const env = {
