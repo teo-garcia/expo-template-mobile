@@ -5,7 +5,7 @@
 # For native iOS/Android development, use your local machine with
 # Xcode / Android Studio as simulators require direct hardware access.
 FROM node:24-alpine AS dev
-RUN corepack enable && corepack prepare pnpm@11.5.1 --activate
+RUN corepack enable
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN CI=true HUSKY=0 pnpm install --frozen-lockfile

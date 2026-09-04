@@ -2,14 +2,14 @@
 
 # ─── Stage 1: deps ───────────────────────────────────────────────────────────
 FROM node:24-alpine AS deps
-RUN corepack enable && corepack prepare pnpm@11.5.1 --activate
+RUN corepack enable
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN CI=true HUSKY=0 pnpm install --frozen-lockfile
 
 # ─── Stage 2: builder ────────────────────────────────────────────────────────
 FROM node:24-alpine AS builder
-RUN corepack enable && corepack prepare pnpm@11.5.1 --activate
+RUN corepack enable
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -31,5 +31,5 @@ RUN chown -R appuser:appgroup /usr/share/nginx/html \
 USER appuser
 EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD wget -qO- http://localhost:8080/ || exit 1
+    CMD wget -qO- http://127.0.0.1:8080/ || exit 1
 CMD ["nginx", "-g", "daemon off;"]

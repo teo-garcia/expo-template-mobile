@@ -45,8 +45,34 @@ jobs:
         with:
           context: .
           file: docker/Dockerfile
+          load: true
           push: false
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            expo-template-mobile:ci
+            ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Start production image
+        run: |
+          docker run --detach --name production-smoke \
+            --publish 127.0.0.1:43119:8080 \
+            expo-template-mobile:ci
+
+      - name: Verify production image health
+        run: |
+          for attempt in {1..30}; do
+            health="$(docker inspect --format '{{.State.Health.Status}}' production-smoke)"
+            if [ "$health" = healthy ] && \
+              curl --fail --silent http://127.0.0.1:43119/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs production-smoke
+          exit 1
+
+      - name: Stop production image
+        if: always()
+        run: docker rm --force production-smoke 2>/dev/null || true
