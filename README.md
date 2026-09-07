@@ -97,6 +97,11 @@ or signing credentials.
 | `pnpm lint:ts`       | TypeScript type check                         |
 | `pnpm format`        | Format with Prettier                          |
 
+The production Dockerfile packages only the Expo static web export behind nginx.
+Shared container verification covers that web target; it does not build,
+publish, or release iOS or Android applications. Native builds remain owned by
+Expo/EAS or the local native toolchains.
+
 ---
 
 ## Project Structure
