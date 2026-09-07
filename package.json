@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "author": "teo-garcia",
-  "packageManager": "pnpm@11.5.1",
+  "packageManager": "pnpm@11.11.0",
   "engines": {
     "node": ">=24"
   },
