@@ -59,9 +59,9 @@ Link each new project to the Expo account that will own its builds, then create
 an installable preview:
 
 ```bash
-pnpm dlx eas-cli@23.2.0 login
-pnpm dlx eas-cli@23.2.0 init
-pnpm dlx eas-cli@23.2.0 build --platform android --profile preview
+pnpm eas login
+pnpm eas init
+pnpm eas build --platform android --profile preview
 ```
 
 Use `--platform ios` for an iOS preview. `eas init` adds the owner and project

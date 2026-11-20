@@ -5,6 +5,8 @@ FROM node:24-alpine AS deps
 RUN corepack enable
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY tools/eas/package.json ./tools/eas/package.json
+COPY patches/ ./patches/
 RUN CI=true HUSKY=0 pnpm install --frozen-lockfile
 
 # ─── Stage 2: builder ────────────────────────────────────────────────────────

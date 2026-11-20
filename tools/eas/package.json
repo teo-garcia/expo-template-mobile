@@ -1,0 +1,8 @@
+{
+  "name": "@template/eas-tooling",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "eas-cli": "23.2.0"
+  }
+}

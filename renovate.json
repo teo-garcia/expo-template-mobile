@@ -10,6 +10,8 @@
         "/^expo-/",
         "react",
         "react-dom",
+        "@types/react",
+        "@types/react-dom",
         "react-native",
         "/^react-native-/",
         "jest-expo",

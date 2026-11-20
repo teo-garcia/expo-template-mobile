@@ -43,6 +43,9 @@ jobs:
       - name: Test
         run: pnpm coverage
 
+      - name: Verify patched tooling compatibility
+        run: pnpm test:tooling
+
       - name: Export web
         env:
           EXPO_PUBLIC_API_BASE_URL: https://api.example.invalid
