@@ -4,3 +4,4 @@ dist
 .expo
 android
 ios
+pnpm-lock.yaml
