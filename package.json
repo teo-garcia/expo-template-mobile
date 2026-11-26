@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "author": "teo-garcia",
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@11.29.0",
   "engines": {
     "node": ">=24"
   },
@@ -88,7 +88,7 @@
     "@typescript-eslint/parser": "^8.58.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-preset-expo": "~55.0.25",
-    "eslint": "10.0.2",
+    "eslint": "10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
@@ -134,6 +134,9 @@
       "text",
       "lcov",
       "html"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^lucide-react-native$": "<rootDir>/node_modules/lucide-react-native/dist/cjs/lucide-react-native.js"
+    }
   }
 }
