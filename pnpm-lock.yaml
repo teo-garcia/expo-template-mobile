@@ -168,13 +168,13 @@ importers:
         version: 4.3.5
       '@teo-garcia/eslint-config-shared':
         specifier: ^0.4.2
-        version: 0.4.2(ce384987945e77d985dc478a4c6d10c9)
+        version: 0.4.3(ce384987945e77d985dc478a4c6d10c9)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.10
-        version: 0.2.10(prettier@3.10.1)
+        version: 0.2.11(prettier@3.10.1)
       '@teo-garcia/tsconfig-shared':
         specifier: ^0.2.1
-        version: 0.2.1
+        version: 0.2.2
       '@testing-library/react-native':
         specifier: ^13.2.0
         version: 13.3.3(jest@29.7.0(@types/node@25.5.0)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.5.0)(typescript@5.9.3)))(react-native@0.83.10(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.0)(supports-color@8.1.1))(react-test-renderer@19.2.0(react@19.2.0))(react@19.2.0)
@@ -2002,8 +2002,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@teo-garcia/eslint-config-shared@0.4.2':
-    resolution: {integrity: sha512-M2pd5XNupTyLlzOmhUGjBiHg5w9BwvwuLEoSjoKbePRWQI+5++1+uYa+OCmsRbulf5LHEJOmB5KsrbIL/PZ5nQ==}
+  '@teo-garcia/eslint-config-shared@0.4.3':
+    resolution: {integrity: sha512-FYcORXUhV9GMqXonlLsNvzMWsMuLT7aH+WTxfDVFSZLAZOMclPELQCTHyuxIAWqds9nENOJD+2ytgwSncSEg6w==}
     engines: {node: '>=24'}
     peerDependencies:
       '@eslint/compat': ^2.0.3
@@ -2011,6 +2011,7 @@ packages:
       '@eslint/js': ^10.0.0
       '@typescript-eslint/eslint-plugin': ^8.58.0
       '@typescript-eslint/parser': ^8.58.0
+      angular-eslint: ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
       eslint: ^10.0.0
       eslint-config-prettier: ^10.1.5
       eslint-plugin-import: ^2.32.0
@@ -2024,6 +2025,8 @@ packages:
       eslint-plugin-testing-library: ^7.16.2
       globals: ^17.4.0
     peerDependenciesMeta:
+      angular-eslint:
+        optional: true
       eslint-plugin-jsx-a11y:
         optional: true
       eslint-plugin-playwright:
@@ -2039,14 +2042,14 @@ packages:
       eslint-plugin-testing-library:
         optional: true
 
-  '@teo-garcia/prettier-config-shared@0.2.10':
-    resolution: {integrity: sha512-obCS5hxBBtQ/we0Czk9iiStU6ddtJLWTthDrwcTIRNFCSECLbvqrjabviaW+l7uVp972x3JQUyZAOopaapV2Lg==}
+  '@teo-garcia/prettier-config-shared@0.2.11':
+    resolution: {integrity: sha512-c+V/v3gmZtwTjmSqCn4xCqqHecyh5ZOucxXhBjySk5McyiAJyhLtkIATmzjMzBHUm269RZHP3/igceaf5kuZUg==}
     engines: {node: '>=24'}
     peerDependencies:
       prettier: ^3.0.0
 
-  '@teo-garcia/tsconfig-shared@0.2.1':
-    resolution: {integrity: sha512-ypVxJWCc45BLvvXKjGpqHG2qw9qyGqPt42iQLFDA+hehJGE1dnnLIOKsyKX4v15n4FJ4THMiUFaHBKF1z+mNdw==}
+  '@teo-garcia/tsconfig-shared@0.2.2':
+    resolution: {integrity: sha512-aahBSIOA2pCTdaQjwt2kUnvtXltEymmdnDaGXFsoWYrQTq5mpbiNX9C6aFgcEJHDh92sFZPSLKUPLQSxcwq+7w==}
     engines: {node: '>=24'}
 
   '@testing-library/react-native@13.3.3':
@@ -8852,7 +8855,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.14
 
-  '@teo-garcia/eslint-config-shared@0.4.2(ce384987945e77d985dc478a4c6d10c9)':
+  '@teo-garcia/eslint-config-shared@0.4.3(ce384987945e77d985dc478a4c6d10c9)':
     dependencies:
       '@eslint/compat': 2.1.1(eslint@10.15.0(jiti@2.6.1)(supports-color@8.1.1))
       '@eslint/eslintrc': 3.3.5(supports-color@8.1.1)
@@ -8869,11 +8872,11 @@ snapshots:
       eslint-plugin-react-hooks: 7.1.1(eslint@10.15.0(jiti@2.6.1)(supports-color@8.1.1))(supports-color@8.1.1)
       eslint-plugin-react-native: 4.1.0(eslint@10.15.0(jiti@2.6.1)(supports-color@8.1.1))
 
-  '@teo-garcia/prettier-config-shared@0.2.10(prettier@3.10.1)':
+  '@teo-garcia/prettier-config-shared@0.2.11(prettier@3.10.1)':
     dependencies:
       prettier: 3.10.1
 
-  '@teo-garcia/tsconfig-shared@0.2.1': {}
+  '@teo-garcia/tsconfig-shared@0.2.2': {}
 
   '@testing-library/react-native@13.3.3(jest@29.7.0(@types/node@25.5.0)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.5.0)(typescript@5.9.3)))(react-native@0.83.10(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.0)(supports-color@8.1.1))(react-test-renderer@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
