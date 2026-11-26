@@ -16,7 +16,9 @@
         "/^react-native-/",
         "jest-expo",
         "react-test-renderer",
-        "nativewind"
+        "nativewind",
+        "@expo/**",
+        "@react-navigation/**"
       ],
       "dependencyDashboardApproval": true,
       "reviewers": ["teo-garcia"]
